@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* VARIABLES */
 
 :root{
@@ -35,7 +42,8 @@
 
 /* GENERAL */
 *{
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 html{
   height: 100%;
@@ -49,8 +57,13 @@ a{
   display: inline-block;
 }
 body{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -70,7 +83,8 @@ body{
   padding: 0;
   border: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -87,22 +101,32 @@ body{
 
 /* STICKY-FOOTER */
 .site-main{
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .site-header{
-  padding-top: 30px;
-  padding-bottom: 20px;
+  position: fixed;
+  width: 100%;
   z-index: 2;
   background-color: #fff;
 }
 .site-header__box{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .site-header__list{
   top: 42px;
   right: 518px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0;
   padding: 0;
@@ -116,11 +140,14 @@ body{
 }
 .site-header__link{
   position: relative;
+  padding: 32px 0px 28px 0px;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.107692px;
   color: #9597A5;
   text-decoration: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
   border-bottom: 4px solid transparent;
 }
@@ -138,7 +165,7 @@ body{
   
 }
 
-.site-header__btn{
+.request-button{
   padding-top: 8px;
   padding-right: 36px;
   padding-bottom: 8px;
@@ -148,22 +175,25 @@ body{
   line-height: 28px;
   text-decoration: none;
   color: #FFFFFF;
+  background: -o-linear-gradient(315deg, #33D35E 0%, #2AB6D9 99.58%);
   background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
   border-radius: 22px;
 }
-.site-header__btn:hover{
+.request-button:hover{
   opacity: 0.4;
 }
 .hero{
   position: relative;
-  padding-top: 170px;
+  padding-top: 250px;
   padding-bottom: 170px;
   background-color: #FAFAFA;
   background-image: url(../images/hero-bg-desktop.svg);
   background-repeat: no-repeat;
-  background-position: calc(50% + 580px)  calc(50% - 70px);
+  background-position: calc(50% + 580px)  calc(50% - 20px);
 }
 .hero__box{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .hero__info{
@@ -172,8 +202,8 @@ body{
 }
 .hero__info::after{
   position: absolute;
-  top: -300px;
-  left: 580px;
+  top: -290px;
+  left: 630px;
   content: "";
   background-image: url(../images/hero-phones-desktop.svg);
   background-repeat: no-repeat;
@@ -204,4 +234,231 @@ body{
   right: -560px;
 }
 
+.why-easybank{
+  padding: 96px 0px;
+  background-color: #F4F5F7;
+}
 
+.why-easybank__info{
+  width: 635px;
+  margin-bottom: 72px;
+}
+.why-easybank__theme{
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 100;
+  font-size: 40px;
+  line-height: 64px;
+  letter-spacing: -0.714286px;
+  color: #2D314D;
+}
+.why-easybank__text{
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.28125px;
+  color: #9597A5;
+}
+.why-easybank__list{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.why-easybank__item{
+  width: 255px;
+  margin-right: 30px;
+}
+.why-easybank__item:last-child{
+  margin-right: 0;
+}
+.why-easybank__item::before{
+  content: "";
+  display: block;
+  margin-bottom: 40px;
+  background-image: url(../images/online-banking-img.svg);
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 72px;
+}
+.why-easybank__item:nth-child(2)::before{
+  background-image: url(../images/simple-budgeting-img.svg);
+}
+.why-easybank__item:nth-child(3)::before{
+  background-image: url(../images/fast-unboarding-img.svg);
+}
+.why-easybank__item:nth-child(4)::before{
+  background-image: url(../images/opan-api-img.svg);
+}
+.why-easybank__minitheme{
+  margin: 0;
+  margin-bottom: 26px;
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.428571px;
+  color: #2D314D;
+}
+.why-easybank__minitext{
+  margin: 0;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: #9597A5;
+}
+.last-articles{
+  padding: 80px 0px;
+}
+.last-articles__theme{
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 100;
+  font-size: 40px;
+  line-height: 64px;
+  letter-spacing: -0.714286px;
+  color: #2D314D;
+}
+.last-articles__list{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.last-articles__item{
+  width: 255px;
+  margin-right: 30px;
+  list-style: none;
+}
+.last-articles__item:last-child{
+  margin-right: 0;
+}
+.last-articles__inner{
+  /* width: 207px; */
+  padding: 24px;
+}
+.last-articles__actor{
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: -0.15625px;
+  color: #9597A5;
+}
+.last-articles__minitheme{
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  letter-spacing: -0.285714px;
+  color: #2D314D;
+}
+.last-articles__minitheme:hover{
+  color: #30C88F;
+}
+.last-articles__minitext{
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.203125px;
+  color: #9597A5;
+}
+
+.site-footer{
+  padding: 48px 0px;
+  background-color:#2D314D;
+}
+.site-footer__img{
+  margin-bottom: 55px;
+}
+.site-footer__social{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer__socialitem{
+  margin-right: 13px;
+}
+.site-footer__socialitem:last-child{
+  margin-right: 0;
+}
+.site-footer__socialitem > a > svg{
+  color: #fff;
+}
+.site-footer__socialitem > a > svg:hover{
+  color: #30c88f;
+}
+.site-footer__box{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer-middle{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 132px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer-middle__start{
+  width: 160px;
+  margin: 0;
+  margin-right: 30px;
+  padding: 0;
+  list-style: none;
+}
+.footer-middle__item{
+  margin-bottom: 8px;
+}
+.footer-middle__item:last-child{
+  margin-bottom: 0;
+}
+.footer-middle__finish{
+  width: 160px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-middle__link{
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.234375px;
+  color: #FFFFFF;
+  text-decoration: none;
+  
+}
+.footer-middle__link:hover{
+  color: #30C88F;
+}
+.site-footer-finish{
+  margin-left: auto;
+}
+.site-footer-finish__box{
+  margin-left: auto;
+  margin-bottom: 24px;
+  width: 163px;
+  border-radius: 22px;
+  background-color: #fff;
+}
+
+.site-footer-finish__text{
+  margin: 0;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.234375px;
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
